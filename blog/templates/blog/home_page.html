@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello I am Ella</title>
+ <title>Welcome to Sage's Blog</title>
 </head>
 <body>
-<!-- Intro Goes Here -->
-<h1>What' sup buddy	</h1>
+ <!-- Site Header -->
+ <h1>Hi. I am Ella. Welcome to my blog!</h1>
 
-<!-- Our Blog Goes Here -->
-<h2>How to Become an Amazing Director</h2>
-<p>Hi. Did you ever want to become a cartoon director? Well today I will tell you how to become one. You jsut have to be a good student an dlove to learn. Then you have to volunteer. it isn't all about grades, but also how much you volunteer and guanxi. </p>
+<!-- Blog Post -->
+ <h2>My First Blog Post</h2>
+ <p>Here is my first blog post. One day at the mall....</p>
 
+
+<img src="http://img.youxiguancha.com/game/2018/04/08/1523150305_13.jpg">
+
+
+<!-- Like And Comment -->
+ <button>Like</button>
+ <h2>Leave a Comment</h2>
+ <form action="{% url 'blog:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+ <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+ User {{username}} says: {{comment}}
 </body>
 </html>
